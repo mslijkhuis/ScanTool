@@ -5,7 +5,7 @@
 # ToDo: Remove Dutch words/descriptions.
 # -----------------------------------------------------------------------------------------------------------------
 
-$outFilePath = "c:\temp\PowerShell\"
+$outFilePath = "c:\temp\PowerShell\" # Change this to any path. UNC path have not been tested.
 $logFile = $outFilePath+"ScanLog.txt"
 $drives = Get-WmiObject -Query "Select * from Win32_logicaldisk where DriveType = 3"
 $driveCount = 0
