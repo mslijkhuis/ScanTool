@@ -1,12 +1,8 @@
 ﻿# -----------------------------------------------------------------------------------------------------------------
-# Geschreven door: Ruerd Jan van der Wal
-# Gemaakt op: 19-02-2020
-# Getest op Windows 7 Pro en Windows 10 Pro
-# Dit script zoekt alle lokale drives op en gaat deze 1 voor 1 scannen. 
-# Middels de variabele $fileSize kan de minimale bestandsomvang ingesteld worden in bytes.
-# Bestanden kleiner dan die waarde worden uitgesloten.
-# Middels de variabele $leeftijdBestandDagen kan het herscannen beperkt worden.
-# Indien de scanlog van de PC ouder is dan die waarde, zal het opnieuw gescanned worden. Anders gebeurt er niets.
+# Written by: Ruerd Jan van der Wal
+# Date: 19-02-2020
+# Platform: Tested on Windows 7 and Windows 10
+# ToDo: Remove Dutch words/descriptions.
 # -----------------------------------------------------------------------------------------------------------------
 
 $outFilePath = "c:\temp\PowerShell\"
@@ -18,8 +14,7 @@ $computerName = hostname
 $scanFileExtension = ".csv"
 $leeftijdBestandDagen = 75
 
-# Powershell maakt een foutje bij 1 lokale drive, dan is de waarde null. 
-# Middels deze if klopt de waarde tenminste.
+# Powershell can not count the value of 1. Therefor, a small if the make sure the numbers match.
 if (($drives.Count) -le 1) {
     $driveCount = 1
     } else {
